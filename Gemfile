@@ -8,7 +8,8 @@ gem 'rails', '3.2.13'
 gem 'mysql2'
 
 
-
+gem 'activeadmin'
+gem 'meta_search', '>= 1.1.0.pre'
 
 
 # To use ActiveModel has_secure_password

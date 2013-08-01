@@ -1,4 +1,7 @@
 Planetaabc::Application.routes.draw do
+  resources :products
+
+
   get "budget/take"
 
   get "pages/index"
