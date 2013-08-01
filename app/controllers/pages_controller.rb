@@ -5,9 +5,7 @@
   end
 
   def about
-  	
-  	# action institucional
-
+  	@content = About.first
   end
 
   def products
