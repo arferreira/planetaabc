@@ -238,55 +238,20 @@
 									<div class="tour_content">
 									<h2>Nossos Serviços</h2><br />
 										<ul class="tour">
-											<li class="current">
-												<a href="#">
-													Educação Infantil
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													Ensino Fundamental I
-												</a>
-											</li>
-											<li>
-												<a href="#">
-													Ensino Fundamental II
-												</a>
-											</li>
-										
+											<% @services.each do |service| %>
+												<li class="current">
+													<%= link_to service.name, service %>
+												</li>
+											<% end %>
 										</ul>
-										<div class="tour_box" style="display:block;">
-											<div class="tour_box_inner">
-												<h5>Ensino Infantil</h5>
-												<p>Choosing Increase HTML will be one of the most successful solutions of yours. In was initially created to help you make a really good website that will bring you to the top, whatever your sphere is.  Increase wordpress theme features minimal but juicy design that will be friendly to all possible customization you might want to apply. Increase template offers super flexibility for color editing and easily turns from a minimalistic style template into a juicy website with great animation effects. Increase is a  SEO-friendly HTML template.</p>
-											</div>
-										</div>
-										<div class="tour_box">
-											<div class="tour_box_inner">
-												<h5>Ensino Fundamental I</h5>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.Vestibulum vulputate aliquam risus. Praesent consequat scelerisque velit eu elementum. Praesent posuere tortor sed mi ullamcorper sodales. Cras porta purus in. <a href="#">Lorem ipsum dolor</a> sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et.</p>
-											</div>
-										</div>
-										<div class="tour_box">
-											<div class="tour_box_inner">
-												<h5>Ensino Fundamental II</h5>
-												<p>Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vulputate aliquam risus. Praesent consequat scelerisque velit eu elementum.</p>
-												<p>Cras porta purus in. <a href="#">Lorem ipsum dolor</a> sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et.</p>
-											</div>
-										</div>
-										<div class="tour_box">
-											<div class="tour_box_inner">
-												<h5>Helpful Support</h5>
-												<p>Mauris dictum aliquam nisi, vitae elementum magna rhoncus et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-												<p>Vestibulum vulputate aliquam risus. Praesent consequat scelerisque velit eu elementum. Praesent posuere tortor sed mi ullamcorper sodales. Cras porta purus in. Lorem ipsum dolor  sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et.</p>
-											</div>
-										</div>
-										<div class="tour_box">
-											<div class="tour_box_inner">
-												<h5>Detailed Docs</h5>
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum vulputate aliquam risus. Praesent consequat scelerisque velit eu elementum. Praesent posuere tortor sed mi ullamcorper sodales. Cras porta purus in. <a href="#">Lorem ipsum dolor</a> sit amet, consectetur adipiscing elit. Aenean ut justo nec arcu molestie molestie non quis magna. Mauris dictum aliquam nisi, vitae elementum magna rhoncus et.</p>
-											</div>
-										</div>
+										<% @services.each do |service| %>
+											<div class="tour_box">
+												<div class="tour_box_inner">
+													<h5><%= service.name %></h5>
+													<p><%= service.description %></p>
+												</div>
+											</div>	
+										<% end %>
 									</div>
 								</div>
 								<div class="one_third last">
