@@ -7,6 +7,11 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2'
 
+group :assets do
+    gem 'sass-rails',   '~> 3.2.5'
+    gem 'coffee-rails', '~> 3.2.2'
+    gem 'uglifier', '>= 1.2.4'
+end
 
 gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
