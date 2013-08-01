@@ -20,6 +20,18 @@
     <%= f.text_field :category %>
   </div>
   <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :mission %><br />
+    <%= f.text_field :mission %>
+  </div>
+  <div class="field">
+    <%= f.label :vision %><br />
+    <%= f.text_field :vision %>
+  </div>
+  <div class="field">
     <%= f.label :content %><br />
     <%= f.cktext_area :content,:ckeditor => {:uiColor => "#AADC6E", :toolbar => "mini"} %>
   </div>

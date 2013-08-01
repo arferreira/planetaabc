@@ -3,6 +3,7 @@
     @events = Event.all
     @products = Product.all
     @services = Service.all
+    @content = About.first
   end
 
   def about
