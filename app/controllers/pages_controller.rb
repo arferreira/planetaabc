@@ -10,8 +10,7 @@
   end
 
   def products
-  	# action products
-  
+  	@products = Product.all
   end
 
   def portfolio
@@ -21,9 +20,7 @@
   end
 
   def events
-
-  	# action eventos
-  	
+    @events = Event.all
   end
 
   def blog
