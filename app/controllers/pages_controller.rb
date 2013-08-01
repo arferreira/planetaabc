@@ -1,7 +1,8 @@
  class PagesController < ApplicationController
   def index
-  	# action inicial
-
+    @events = Event.all
+    @products = Product.all
+    @services = Service.all
   end
 
   def about
