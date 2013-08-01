@@ -1,4 +1,18 @@
 Planetaabc::Application.routes.draw do
+  get "budget/take"
+
+  get "pages/index"
+  get "pages/contact"
+  get "pages/about"
+  get "pages/products"
+  get "pages/portfolio"
+  get "pages/events"
+  get "pages/blog"
+
+
+  match 'fale-conosco' => 'contact#new', :as => 'contact', :via => :get
+  match 'fale-conosco' => 'contact#create', :as => 'contact', :via => :post
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +62,7 @@ Planetaabc::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+   root :to => 'pages#index'
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,16 @@
+<nav>
+						<ul id="navigation">
+							<li class="current_page_item"><%= link_to content_tag("span", "Home"), {:controller => "pages", :action => "index"}%></li>
+							<li class="drop"><%= link_to content_tag("span", "Institucional"), {:controller => "pages", :action => "about"}%>
+							</li>
+							<li class="drop"><%= link_to content_tag("span", "Produtos"), {:controller => "pages", :action => "products"}%>
+							</li>
+							<li class="drop"><%= link_to content_tag("span", "Portifólio"), {:controller => "pages", :action => "portfolio"}%>
+							</li>
+							<li><%= link_to content_tag("span", "Eventos"), {:controller => "pages", :action => "events"}%></li>
+							<li><%= link_to content_tag("span", "Blog"), {:controller => "pages", :action => "blog"}%></li>
+							
+							<li><%= link_to content_tag("span", "Contato"), {:controller => "contact", :action => "new"}%></li>
+						</ul>
+						<div class="cl"></div>
+				  </nav>
