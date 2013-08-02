@@ -7,12 +7,12 @@
         <% @events.each do |event| %>
           <div class="one_third aligncenter">
             <div class="featured_block">
-              <div class="cmsms_services_icon">
+              <div style="padding: 0 31px;" class="">
                 <%= image_tag event.picture_url(:thumb), :class => "aligncenter"  %>
               </div>
               <h2><%= event.name %></h2>
               <span class="entry-content">
-                <p><%= truncate event.description, length: 100 %></p>
+                <p><%= event.description%></p>
               </span>
             </div>
           </div>
