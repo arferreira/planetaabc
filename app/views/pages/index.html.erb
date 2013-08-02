@@ -1,127 +1,119 @@
-<!-- __________________________________________________ Start Middle -->
-			
-				<section id="middle">
-					<div class="middle_inner">
-
-<!-- __________________________________________________ Start Content -->
-
-						<section id="middle_content">
-							<div class="entry">
-								<% @products.each do |product| %>
-				          <div class="one_third aligncenter">
-				            <div class="featured_block">
-				              <div class="cmsms_services_icon">
-				                <%= image_tag product.picture_url(:mini_thumb), :class => "aligncenter"  %>
-				              </div>
-				              <h2><%= product.name %></h2>
-				              <p><%= product.description %></p>
-				            </div>
-				          </div>
-				        <% end %>
-								<div class="cl"></div>
-								<div class="one_first">
-									<aside class="widget widget_text">
-										<div class="textwidget">
-											<section class="post_type_shortcode four_blocks">
-												<h3 class="cms_title">Últimos Eventos</h3>
-												<script type="text/javascript">
-													jQuery(document).ready(function () { 
-														jQuery('.post_type_list').cmsmsResponsiveContentSlider( { 
-															sliderWidth : '100%', 
-															sliderHeight : 'auto', 
-															animationSpeed : 500, 
-															animationEffect : 'slide', 
-															animationEasing : 'easeInOutExpo', 
-															pauseTime : 0, 
-															activeSlide : 1, 
-															touchControls : false, 
-															pauseOnHover : false, 
-															arrowNavigation : true, 
-															slidesNavigation : false 
-														} );
-													} );
-												</script>
-												<ul class="post_type_list responsiveContentSlider">
-													<li>
-														<% @events.each do |event| %>
-															<article class="portfolio format-album">
-																<div class="portfolio_inner">
-																	<%= link_to '', event %>
-																	<figure>
-																		<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
-																	</figure>
-																	<div class="project_rollover" style="background-color:#6cc437;">
-																		<header class="entry-header">
-																			<h6 class="entry-title">
-																				<%= link_to event.name, event %>
-																			</h6>
-																			<ul class="cmsms_category">
-																				<li><a href="#">Design</a>, </li>
-																				<li><a href="#">Corporate</a><li>
-																			</ul>
-																			<span class="cmsms_post_img"></span>
-																		</header>
-																		<span class="entry-content">
-																			<p><%= truncate event.description, length: 100 %></p>
-																		</span>
-																	</div>
-																</div>
-															</article>
-														<% end %>
-													</li>
-												</ul>
-											</section>
-										</div>
-									</aside>
-								</div>
-								<div class="cl"></div>
-								<div class="two_third">
-									<div class="tour_content">
-									<h2>Nossos Serviços</h2><br />
-										<ul class="tour">
-											<% @services.each do |service| %>
-												<li class="current">
-													<%= link_to service.name, service %>
-												</li>
-											<% end %>
-										</ul>
-										<% @services.each do |service| %>
-											<div class="tour_box">
-												<div class="tour_box_inner">
-													<h5><%= service.name %></h5>
-													<p><%= service.description %></p>
+<section id="middle">
+	<div class="middle_inner">
+		<section id="middle_content">
+			<div class="entry">
+				<% @products.each do |product| %>
+          <div class="one_third aligncenter">
+            <div class="featured_block">
+              <div class="cmsms_services_icon">
+                <%= image_tag product.picture_url(:mini_thumb), :class => "aligncenter"  %>
+              </div>
+              <h2><%= product.name %></h2>
+              <p><%= product.description %></p>
+            </div>
+          </div>
+        <% end %>
+				<div class="cl"></div>
+				<div class="one_first">
+					<aside class="widget widget_text">
+						<div class="textwidget">
+							<section class="post_type_shortcode four_blocks">
+								<h3 class="cms_title">Últimos Eventos</h3>
+								<script type="text/javascript">
+									jQuery(document).ready(function () { 
+										jQuery('.post_type_list').cmsmsResponsiveContentSlider( { 
+											sliderWidth : '100%', 
+											sliderHeight : 'auto', 
+											animationSpeed : 500, 
+											animationEffect : 'slide', 
+											animationEasing : 'easeInOutExpo', 
+											pauseTime : 0, 
+											activeSlide : 1, 
+											touchControls : false, 
+											pauseOnHover : false, 
+											arrowNavigation : true, 
+											slidesNavigation : false 
+										} );
+									} );
+								</script>
+								<ul class="post_type_list responsiveContentSlider">
+									<li>
+										<% @events.each do |event| %>
+											<article class="portfolio format-album">
+												<div class="portfolio_inner">
+													<%= link_to '', event %>
+													<figure>
+														<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
+													</figure>
+													<div class="project_rollover" style="background-color:#6cc437;">
+														<header class="entry-header">
+															<h6 class="entry-title">
+																<%= link_to event.name, event %>
+															</h6>
+															<ul class="cmsms_category">
+																<li><a href="#">Design</a>, </li>
+																<li><a href="#">Corporate</a><li>
+															</ul>
+															<span class="cmsms_post_img"></span>
+														</header>
+														<span class="entry-content">
+															<p><%= truncate event.description, length: 100 %></p>
+														</span>
+													</div>
 												</div>
-											</div>	
+											</article>
 										<% end %>
-									</div>
+									</li>
+								</ul>
+							</section>
+						</div>
+					</aside>
+				</div>
+				<div class="cl"></div>
+				<div class="two_third">
+					<div class="tour_content">
+					<h2>Nossos Serviços</h2><br />
+						<ul class="tour">
+							<% @services.each do |service| %>
+								<li class="current">
+									<%= link_to service.name, service %>
+								</li>
+							<% end %>
+						</ul>
+						<% @services.each do |service| %>
+							<div class="tour_box">
+								<div class="tour_box_inner">
+									<h5><%= service.name %></h5>
+									<p><%= service.description %></p>
 								</div>
-								<div class="one_third last">
-									<div class="cmsms_shortcode_testimonials">
-										<h2>Missão / Visão</h2><br />
-										<header class="entry-header">
-											<blockquote>
-												<h6><%= @content.mission %></h6>
-											</blockquote>
-										</header>
-	
-									</div>
-								</div>
-								<div class="cl"></div>
-								
-								<div class="colored_shortcode">
-									<div class="colored_title">
-										<div class="colored_title_inner">
-											<h2>Conheça nossos produtos!</h2>
-											<p>Envie-nos um contato agora mesmo.</p>
-										</div>
-									</div>
-									<a class="colored_button" href="#"><span class="icon_banner icon_down"></span>Orçamento online</a>
-									
-								</div>
-							</div>
-						</section>
-<!-- __________________________________________________ Finish Content -->
+							</div>	
+						<% end %>
+					</div>
+				</div>
+				<div class="one_third last">
+					<div class="cmsms_shortcode_testimonials">
+						<h2>Missão / Visão</h2><br />
+						<header class="entry-header">
+							<blockquote>
+								<h6><%= @content.mission %></h6>
+							</blockquote>
+						</header>
 
 					</div>
-				</section>
-<!-- __________________________________________________ Finish Middle -->
+				</div>
+				<div class="cl"></div>
+				
+				<div class="colored_shortcode">
+					<div class="colored_title">
+						<div class="colored_title_inner">
+							<h2>Conheça nossos produtos!</h2>
+							<p>Envie-nos um contato agora mesmo.</p>
+						</div>
+					</div>
+					<a class="colored_button" href="#"><span class="icon_banner icon_down"></span>Orçamento online</a>
+					
+				</div>
+			</div>
+		</section>
+	</div>
+</section>
