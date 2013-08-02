@@ -62,14 +62,14 @@
 													<li class="latest_item">
 														<article class="portfolio format-album">
 															<div class="portfolio_inner">
-																<a href="album_four.html"></a>
+																<%= link_to '', event %>
 																<figure>
 																	<img src="images/img/fproject_4_1.jpg" alt="" class="fullwidth" />
 																</figure>
 																<div class="project_rollover" style="background-color:#6cc437;">
 																	<header class="entry-header">
 																		<h6 class="entry-title">
-																			<a href="album_four.html">Lifestyle</a>
+																			<%= link_to event.name, event %>
 																		</h6>
 																		<ul class="cmsms_category">
 																			<li><a href="#">Design</a>, </li>
@@ -78,7 +78,7 @@
 																		<span class="cmsms_post_img"></span>
 																	</header>
 																	<span class="entry-content">
-																		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
+																		<p><%= event.description %></p>
 																	</span>
 																</div>
 															</div>
