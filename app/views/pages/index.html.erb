@@ -64,7 +64,7 @@
 															<div class="portfolio_inner">
 																<%= link_to '', event %>
 																<figure>
-																	<img src="images/img/fproject_4_1.jpg" alt="" class="fullwidth" />
+																	<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
 																</figure>
 																<div class="project_rollover" style="background-color:#6cc437;">
 																	<header class="entry-header">
@@ -78,7 +78,7 @@
 																		<span class="cmsms_post_img"></span>
 																	</header>
 																	<span class="entry-content">
-																		<p><%= event.description %></p>
+																		<p><%= truncate event.description, length: 100 %></p>
 																	</span>
 																</div>
 															</div>
