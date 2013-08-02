@@ -1,8 +1,8 @@
  class PagesController < ApplicationController
   def index
     @events = Event.limit(4)
-    @products = Product.all
-    @services = Service.all
+    @products = Product.limit(3)
+    @services = Service.limit(3)
     @content = About.first
   end
 
