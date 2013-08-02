@@ -58,33 +58,33 @@
 													} );
 												</script>
 												<ul class="post_type_list responsiveContentSlider">
-												<% @events.each do |event| %>
-													<li class="latest_item">
-														<article class="portfolio format-album">
-															<div class="portfolio_inner">
-																<%= link_to '', event %>
-																<figure>
-																	<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
-																</figure>
-																<div class="project_rollover" style="background-color:#6cc437;">
-																	<header class="entry-header">
-																		<h6 class="entry-title">
-																			<%= link_to event.name, event %>
-																		</h6>
-																		<ul class="cmsms_category">
-																			<li><a href="#">Design</a>, </li>
-																			<li><a href="#">Corporate</a><li>
-																		</ul>
-																		<span class="cmsms_post_img"></span>
-																	</header>
-																	<span class="entry-content">
-																		<p><%= truncate event.description, length: 100 %></p>
-																	</span>
+													<li>
+														<% @events.each do |event| %>
+															<article class="portfolio format-album">
+																<div class="portfolio_inner">
+																	<%= link_to '', event %>
+																	<figure>
+																		<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
+																	</figure>
+																	<div class="project_rollover" style="background-color:#6cc437;">
+																		<header class="entry-header">
+																			<h6 class="entry-title">
+																				<%= link_to event.name, event %>
+																			</h6>
+																			<ul class="cmsms_category">
+																				<li><a href="#">Design</a>, </li>
+																				<li><a href="#">Corporate</a><li>
+																			</ul>
+																			<span class="cmsms_post_img"></span>
+																		</header>
+																		<span class="entry-content">
+																			<p><%= truncate event.description, length: 100 %></p>
+																		</span>
+																	</div>
 																</div>
-															</div>
-														</article>
+															</article>
+														<% end %>
 													</li>
-													<% end %>
 												</ul>
 											</section>
 										</div>
