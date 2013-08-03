@@ -1,18 +1,13 @@
 Planetaabc::Application.routes.draw do
   resources :comments
 
-
   resources :portfolios
-
 
   resources :posts
 
-
   resources :categories
 
-
   resources :services
-
 
   mount Ckeditor::Engine => '/ckeditor'
 

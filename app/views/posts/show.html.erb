@@ -65,8 +65,7 @@
                     </aside>
                     <div class="divider"></div>
                     <aside id="comments">
-                      <h2>Comentários (<%= @post.comments.size %>)</h2>
-                      
+                      <h2>Comentários (<%= @post.comments.all.size %>)</h2>
                       <ol class="commentlist">
                         <% @post.comments.all.each do |comment| %>
                           <li>
