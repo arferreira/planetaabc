@@ -25,6 +25,15 @@
   <%= @post.author %>
 </p>
 
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <div>
+    <strong><%= comment.user_name %></strong>
+    <br />
+    <p><%= comment.body %><p>
+  </div>
+<% end %>
+<%= render 'comments/form' %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
