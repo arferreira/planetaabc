@@ -1,4 +1,7 @@
 Planetaabc::Application.routes.draw do
+  resources :portfolios
+
+
   resources :posts
 
 
