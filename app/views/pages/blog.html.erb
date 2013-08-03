@@ -1,0 +1,13 @@
+<section id="middle">
+  <div class="middle_inner">
+    <br><br>
+    <center><h1>Blog</h1></center>
+    <article>
+      <% @posts.each do |post| %>
+        <%= post.title %>
+        <%= post.excerpt %>
+        <%= post.author %>
+      <% end %>
+    </article>
+  </div> <!-- final div middle_inner-->
+</section> <!-- final middle section -->

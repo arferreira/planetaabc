@@ -26,7 +26,7 @@
 
   def blog
   	# action blog 
-
+    @posts = Post.all
   end
 
   def contact
