@@ -65,9 +65,9 @@
                     </aside>
                     <div class="divider"></div>
                     <aside id="comments">
-                      <h2>Comentários (<%= @post.comments.all.size %>)</h2>
+                      <h2>Comentários (<%= @post.post_comments.all.size %>)</h2>
                       <ol class="commentlist">
-                        <% @post.comments.all.each do |comment| %>
+                        <% @post.post_comments.all.each do |comment| %>
                           <li>
                             <div class="comment-body">
                               <figure class="alignleft">
@@ -86,7 +86,7 @@
                             </div>
                           </li>
                         <% end %>
-                        <%= render 'comments/form' %>
+                        <%= render 'post_comments/form' %>
                       </ol>
                     </aside>
                   </section>

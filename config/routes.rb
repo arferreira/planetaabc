@@ -1,5 +1,5 @@
 Planetaabc::Application.routes.draw do
-  resources :comments
+  resources :post_comments
 
   resources :portfolios
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803205157) do
+ActiveRecord::Schema.define(:version => 20130803224444) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -79,16 +79,6 @@ ActiveRecord::Schema.define(:version => 20130803205157) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
-  create_table "comments", :force => true do |t|
-    t.string   "user_name"
-    t.text     "body"
-    t.integer  "post_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "email"
-    t.string   "site"
-  end
-
   create_table "events", :force => true do |t|
     t.string   "name"
     t.datetime "start_date"
@@ -111,6 +101,16 @@ ActiveRecord::Schema.define(:version => 20130803205157) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "post_comments", :force => true do |t|
+    t.string   "user_name"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "email"
+    t.string   "site"
   end
 
   create_table "posts", :force => true do |t|
