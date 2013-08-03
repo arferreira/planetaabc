@@ -25,7 +25,13 @@
               <header class="entry-header">
                 <div class="cmsms_media">
                   <figure>
-                    <a href="openpost.html" class="preloader inBlog" style="background-image: none; height: auto; padding: 0px; "><span class="image_container_img"><span id="img1" class="p_img_container"><img src="images/img/bpost_1.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
+                    <a href="openpost.html" class="preloader inBlog" style="background-image: none; height: auto; padding: 0px; ">
+                    <span class="image_container_img">
+                    <span id="img1" class="p_img_container">
+                    <%= image_tag post.picture_url(:mega_thumb), :class => "fullwidth", :style=>"opacity: 1;"  %>
+                    <span class="image_rollover"></span>
+                    </span>
+                    </span>
                       
                     </a>
                   </figure>
