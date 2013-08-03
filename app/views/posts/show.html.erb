@@ -36,8 +36,8 @@
                           </div>
                           <div class="cmsms_post_info">
                             <span class="user_name">By <%= @post.author %></span>&nbsp;&nbsp;/&nbsp;&nbsp;
-                            <span>In <a href="#">Corporate</a>, <a href="#">Business</a>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-                            <span>(0) <a href="#" class="cmsms_comments">Comments</a></span>
+                            <span>Em <%= link_to @post.category.name, '#' %>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>(<%= @post.post_comments.all.size %>) <a href="#" class="cmsms_comments">Comments</a></span>
                           </div>
                         </header>
                         <div class="entry-content">
@@ -46,8 +46,7 @@
                         <div class="divider"></div>
                         <footer class="entry-meta">
                           <ul class="cmsms_tags">
-                            <li>Tags: <a href="openpost.html">Business</a>, </li>
-                            <li><a href="openpost.html">Corporate</a></li>
+                            <li><%= link_to @post.category.name, '#' %></li>
                           </ul>
                         </footer>
                       
