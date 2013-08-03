@@ -2,13 +2,6 @@
   <div class="middle_inner">
     <br><br>
     <center><h1>Blog</h1></center>
-    <article>
-        <div class="post-blog">
-          
-          
-          
-        </div>
-    </article>
     <div class="entry_summary">
       <section class="blog">
         <% @posts.each do |post| %>
@@ -42,7 +35,7 @@
                 <div class="cmsms_post_info">
                   <span class="user_name">By <%= post.author %></span>&nbsp;&nbsp;/&nbsp;&nbsp;
                   <span>Em <a href="#">Corporate</a>, <a href="#">Business</a>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-                  <span>(0) <a href="#" class="cmsms_comments">Comments</a></span>
+                  <span>(<%= post.comments.size %>) <a href="#" class="cmsms_comments">Comentários</a></span>
                 </div>
               </header>
               <div class="cl"></div>
