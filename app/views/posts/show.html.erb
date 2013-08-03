@@ -68,11 +68,11 @@
                       <h2>Comentários (<%= @post.comments.size %>)</h2>
                       
                       <ol class="commentlist">
-                        <% @post.comments.each do |comment| %>
+                        <% @post.comments.all.each do |comment| %>
                           <li>
                             <div class="comment-body">
                               <figure class="alignleft">
-                                  <img src="images/img/user.jpg" alt="">
+                                  <%= image_tag avatar_url(comment) %>
                               </figure>
                               <div class="comment-authorinfo">
                                 <a href="#" class="comment-reply-link fr"><span>Responder</span></a>
@@ -98,17 +98,6 @@
 <!-- __________________________________________________ Start Sidebar -->
         
               <section id="sidebar">
-                <div class="one_first">
-                  <aside class="widget widget_custom_advertising_entries">
-                    <h2 class="widgettitle">Advertising</h2>
-                    <ul>
-                      <li><a href="#"><img src="images/img/advertising_img_1.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="images/img/advertising_img_2.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="images/img/advertising_img_3.jpg" alt=""></a></li>
-                      <li><a href="#"><img src="images/img/advertising_img_4.jpg" alt=""></a></li>
-                    </ul>
-                  </aside>  
-                </div>
                 <div class="one_first">
                   <aside class="widget widget_custom_latest_popular_recent_entries">
                     <h2 class="widgettitle">Recent Post</h2>
@@ -243,22 +232,11 @@
                     </div>
                   </aside>
                 </div>
-                <div class="one_first">
-                  <aside class="widget widget_custom_flickr_entries">
-                    <h2 class="widgettitle">Flickr</h2>
-                    <ul id="flickr_images"><li><a href="http://farm3.staticflickr.com/2681/4504468177_502fd52841_b.jpg"><img src="http://farm3.staticflickr.com/2681/4504468177_502fd52841_s.jpg" alt="DSC_0106"></a></li><li><a href="http://farm5.staticflickr.com/4028/4505099942_633b04caf2_b.jpg"><img src="http://farm5.staticflickr.com/4028/4505099942_633b04caf2_s.jpg" alt="DSC_0042"></a></li><li><a href="http://farm5.staticflickr.com/4033/4504466237_d17cd2ce3c_b.jpg"><img src="http://farm5.staticflickr.com/4033/4504466237_d17cd2ce3c_s.jpg" alt="DSC_0040"></a></li><li><a href="http://farm5.staticflickr.com/4064/4505098316_5c56084192_b.jpg"><img src="http://farm5.staticflickr.com/4064/4505098316_5c56084192_s.jpg" alt="DSC_0119"></a></li><li><a href="http://farm5.staticflickr.com/4070/4504464935_02406c86e2_b.jpg"><img src="http://farm5.staticflickr.com/4070/4504464935_02406c86e2_s.jpg" alt="DSC_0128"></a></li><li><a href="http://farm5.staticflickr.com/4022/4504464559_162cc45c39_b.jpg"><img src="http://farm5.staticflickr.com/4022/4504464559_162cc45c39_s.jpg" alt="DSC_0113"></a></li></ul>
-                                        <p><a href="#">More flickr Image</a></p>
-                    
-                  </aside>
-                </div>
               </section>
 
             </div>  
           </div>
         </section>
-
-<!-- __________________________________________________ Finish Bottom -->
-
       </div>
 </section>
     </div>
