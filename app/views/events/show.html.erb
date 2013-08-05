@@ -1,5 +1,56 @@
-<p id="notice"><%= notice %></p>
+<div class="wrap_headline">
+  <div class="headline">
+    <h1><%= @event.name %></h1>
+  </div>
+</div>
+<section id="middle">
+          <div class="middle_inner">
+<!-- __________________________________________________ Start Content -->
 
+            <section id="middle_content">
+              <div class="entry">
+                <section class="opened-article">
+                  <article class="portfolio hentry format-album project">
+                    <div class="entry-content project_content portfolio_container four_blocks">
+                      <div class="cmsms_media"> 
+                        <div class="cmsms_media_box">
+                          <figure>
+                            <a href="<%=@event.picture_url(:thumb)%>" class="preloader inBlog jackbox" data-group="openpost_1" title="" style="background-image: none; height: auto; padding: 0px; " data-thumbnail="<%=@event.picture_url(:thumb)%>"><span class="image_container_img"><span id="img1" class="p_img_container">
+                            <%= image_tag @event.picture_url(:thumb), :class => "fullwidth", :style => "opacity: 1;"  %><span class="image_rollover"></span></span></span>
+                              
+                            </a>
+                          </figure>
+                        </div>
+                      </div>
+                      <div class="cl"></div>
+                      <h2>Descrição</h2>
+                      <p><%= @event.description %></p>
+                    </div>
+                    <footer class="entry-meta project_sidebar">
+                      <ul class="project_details">
+                        
+                        <li class="cmsms_category">
+                          <span class="fl">Categoria:</span>
+                          <div>
+                            <%= @event.category.name %>
+                          </div>
+                        </li>
+                        <li title="September 27, 2012" class="published">
+                          <span class="fl">Date:</span>
+                          <div>Sep 09, 2012</div>
+                        </li>
+                      </ul>
+                      <div class="divider"></div>
+                    </footer>
+                  </article>
+                  <div class="divider"></div>
+                </section>
+              </div>
+            </section>
+<!-- __________________________________________________ Finish Content -->    
+
+          </div>
+        </section>
 <p>
   <b>Name:</b>
   <%= @event.name %>

@@ -10,5 +10,7 @@ Contato
 == Ainda Falta
 Show de:
 Eventos
+Links no Footer.
+Menu com Current correto
 == Senhas
 /admin => {:email => "admin@example.com", :senha => "password"}
