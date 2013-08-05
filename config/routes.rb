@@ -1,6 +1,13 @@
 Planetaabc::Application.routes.draw do
-  resources :services
+  resources :post_comments
 
+  resources :portfolios
+
+  resources :posts
+
+  resources :categories
+
+  resources :services
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -21,7 +28,6 @@ Planetaabc::Application.routes.draw do
   get "pages/portfolio"
   get "pages/events"
   get "pages/blog"
-
 
   match 'fale-conosco' => 'contact#new', :as => 'contact', :via => :get
   match 'fale-conosco' => 'contact#create', :as => 'contact', :via => :post

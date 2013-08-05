@@ -2,6 +2,20 @@
 	<div class="middle_inner">
 		<br><br>
 		<center><h1>Nossos Produtos</h1></center>
-
+    <section id="middle_content">
+      <div class="entry">
+        <% @products.each do |product| %>
+          <div class="one_third aligncenter">
+            <div class="featured_block">
+              <div class="cmsms_services_icon">
+                <%= image_tag product.picture_url(:mini_thumb), :class => "aligncenter"  %>
+              </div>
+              <h2><%= product.name %></h2>
+              <p><%= product.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
 	</div> <!-- final div middle_inner-->
 </section> <!-- final middle section -->

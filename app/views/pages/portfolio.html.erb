@@ -1,0 +1,42 @@
+<div class="middle_inner">
+<!-- __________________________________________________ Start Content -->
+            
+            <section id="middle_content">
+              <div class="entry">
+                <section class="portfolio_container four_blocks isotope" style="position: relative; overflow: hidden; height: 470px; ">
+                  <% @portfolios.each do |portfolio| %>
+                    <article class="portfolio format-album isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(0px, 0px); ">
+                      <div class="portfolio_inner">
+                        <a href="album_four.html"></a>
+                        <figure class="preloader" style="background-image: none; ">
+                          <span class="image_container_img">
+                            <span id="img1" class="p_img_container">
+                              <%= image_tag portfolio.picture_url(:thumb), :class => "fullwidth", :style=>"opacity: 1;"  %>
+                              <span class="image_rollover"></span>
+                            </span>
+                          </span>
+                        </figure>
+                        <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
+                          <header class="entry-header">
+                            <h6 class="entry-title">
+                              <%= link_to portfolio.title, portfolio %>
+                            </h6>
+                            <ul class="cmsms_category">
+                              <li><%= portfolio.category.name %></li>  
+                            </ul>
+                            <span class="cmsms_post_img"></span>
+                            <span class="meta-date" style="display:none;"><%= portfolio.created_at %></span>
+                          </header>
+                          <span class="entry-content">
+                            <p><%= portfolio.description %></p>
+                          </span>
+                        </div>
+                      </div>
+                    </article>
+                  <% end %>
+                </section>
+              </div>
+            </section>
+<!-- __________________________________________________ Finish Content -->
+
+          </div>

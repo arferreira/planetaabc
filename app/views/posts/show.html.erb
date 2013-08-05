@@ -1,0 +1,242 @@
+<section id="middle">
+  <div class="middle_inner">
+    <div class="wrap_headline">
+      <div class="headline">
+        <div class="cmsms_title">
+          <h1 class="entry-title"><%= @post.title %></h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">     
+        <section id="middle">
+          <div class="middle_inner">
+<!-- __________________________________________________ Start Content -->
+
+            <div class="content_wrap">
+              <section id="content">
+                <div class="entry">
+                  <section class="blog opened-article format-standard">
+                    <article class="post format-standard">
+                      <div class="cmsms_info">
+                        <div class="published">
+                          <span class="cmsms_date_day"><%= @post.created_at.strftime("%d") %></span>
+                          <span class="cmsms_date_year_mounth"><%= @post.created_at.strftime("%Y") %> <br><span class="mounth"><%= @post.created_at.strftime("%b").upcase %></span></span>
+                        </div>
+                        <div class="cmsms_post_img" style="background-color:#fabe09;"></div>
+                        <div class="cmsms_like"><a href="#" class="cmsmsLike"><span>0</span></a></div>
+                      </div>
+                      <div class="ovh">
+                        <header class="entry-header">
+                          <div class="cmsms_media">
+                            <figure>
+                              <a href="images/img/blog_1.jpg" class="preloader inBlog jackbox" data-group="openpost_1" style="background-image: none; height: auto; padding: 0px; "><span class="image_container_img"><span id="img1" class="p_img_container"><img src="images/img/bpost_3.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
+                                
+                              </a>
+                            </figure>
+                          </div>
+                          <div class="cmsms_post_info">
+                            <span class="user_name">By <%= @post.author %></span>&nbsp;&nbsp;/&nbsp;&nbsp;
+                            <span>Em <%= link_to @post.category.name, '#' %>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
+                            <span>(<%= @post.post_comments.all.size %>) <a href="#" class="cmsms_comments">Comments</a></span>
+                          </div>
+                        </header>
+                        <div class="entry-content">
+                          <p><%= @post.content %></p>
+                        </div>
+                        <div class="divider"></div>
+                        <footer class="entry-meta">
+                          <ul class="cmsms_tags">
+                            <li><%= link_to @post.category.name, '#' %></li>
+                          </ul>
+                        </footer>
+                      
+                      </div>
+                      
+                    </article>
+                    <div class="cl"></div>
+                    <div class="divider"></div>
+                    <aside class="about_author">
+                      <h2>Sobre&nbsp;o&nbsp;autor</h2>
+                      <div class="wrap_author_content">
+                        <h4><%= @post.author %></h4>
+                        <p>Aliquam convallis erat a enim dictum et vestibulum nibh rutrum. In mi nisi, hendrerit in pellentesque pellentesque, blandit a ipsum. Nam aliquet commodo nulla nec lobortis. Curabitur aliquet, urna a tempus iaculis, lorem augue tristique augue, sed aliquet sapien ligula nec lorem. </p>
+                      </div>
+                    </aside>
+                    <div class="divider"></div>
+                    <aside id="comments">
+                      <h2>Comentários (<%= @post.post_comments.all.size %>)</h2>
+                      <ol class="commentlist">
+                        <% @post.post_comments.all.each do |comment| %>
+                          <li>
+                            <div class="comment-body">
+                              <figure class="alignleft">
+                                  <%= image_tag avatar_url(comment) %>
+                              </figure>
+                              <div class="comment-authorinfo">
+                                <a href="#" class="comment-reply-link fr"><span>Responder</span></a>
+                                <abbr class="published fr" title="By June 29, 2012 / 3:30 ">By June 29, 2012 / 3:30</abbr>
+                                <h4><%= comment.user_name %></h4>
+                              </div>
+                              <div class="comment-content">
+                                <p><%= comment.body %></p>
+                                <div class="cl"></div>
+                              </div>
+                              <div class="cl"></div>
+                            </div>
+                          </li>
+                        <% end %>
+                        <%= render 'post_comments/form' %>
+                      </ol>
+                    </aside>
+                  </section>
+                </div>
+              </section>
+<!-- __________________________________________________ Finish Content -->    
+
+<!-- __________________________________________________ Start Sidebar -->
+        
+              <section id="sidebar">
+                <div class="one_first">
+                  <aside class="widget widget_custom_latest_popular_recent_entries">
+                    <h2 class="widgettitle">Recent Post</h2>
+                    <div class="tab lpr">
+                      <ul class="tabs">
+                        <li>
+                          <a href="#" class="current"><span>Recent</span></a>
+                        </li>
+                        <li>
+                          <a href="#" class=""><span>Popular</span></a>
+                        </li>
+                        <li>
+                          <a href="#" class=""><span>Comments</span></a>
+                        </li>
+                      </ul>
+                      <div class="tab_content">
+                        <div class="tabs_tab" style="display: block;">
+                          <ul>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a title="Standard blogpost with image" href="openpost.html">
+                                    <img src="images/img/posts_1.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a title="Standard blogpost with image" href="openpost.html">Standard blogpost with image</a>
+                                <abbr title="08-09-2012" class="published">26 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a title="Gallery Post Format" href="openpost.html">
+                                    <img src="images/img/posts_2.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a title="Gallery Post Format" href="openpost.html">Gallery Post Format</a>
+                                <abbr title="07-09-2012" class="published">27 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a title="Image Post Format" href="openpost.html">
+                                    <img src="images/img/posts_3.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a title="Image Post Format" href="openpost.html">Image Post Format</a>
+                                <abbr title="06-09-2012" class="published">28 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tabs_tab" style="display: none;">
+                                                    <ul>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a href="openpost.html" title="Gallery Post Format">
+                                    <img src="images/img/posts_1.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a href="openpost.html" title="Gallery Post Format">Gallery Post Format</a>
+                                <abbr class="published" title="07-09-2012">27 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a href="openpost.html" title="Video from Vimeo">
+                                    <img src="images/img/posts_2.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a href="openpost.html" title="Video from Vimeo">Video from Vimeo</a>
+                                <abbr class="published" title="05-09-2012">29 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                            <li>
+                              <div class="alignleft">
+                                <figure>
+                                  <a href="openpost.html" title="Standard blogpost without image">
+                                    <img src="images/img/posts_3.jpg">
+                                  </a>
+                                </figure>
+                              </div>
+                              <div class="ovh">
+                                <a href="openpost.html" title="Standard blogpost without image">Standard blogpost without image</a>
+                                <abbr class="published" title="06-09-2012">28 days ago</abbr>
+                              </div>
+                              <div class="cl"></div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="tabs_tab" style="display: none;">
+                          <ul>
+                            <li>
+                              <strong>Rob Miller</strong> on <a rel="bookmark" href="openpost.html">Cum sociis natoque</a>
+                              <br>
+                              <abbr title="22 hours ago" class="published">22 hours ago</abbr>
+                              <p>Quisque id odio et nibh scelerisque vulputate</p>
+                            </li>
+                            <li>
+                              <strong>Rob Miller</strong> on <a href="openpost.html">Cum sociis natoque</a>
+                              <br>
+                              <abbr title="22 hours ago" class="published">22 hours ago</abbr>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </li>
+                            <li>
+                              <strong>Rob Miller</strong> on <a href="openpost.html">Cum sociis natoque</a>
+                              <br>
+                              <abbr title="22 hours ago" class="published">22 hours ago</abbr>
+                              <p>New comment</p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </aside>
+                </div>
+              </section>
+
+            </div>  
+          </div>
+        </section>
+      </div>
+</section>
+    </div>
+  </div> <!-- final div middle_inner-->
+</section> <!-- final middle section -->

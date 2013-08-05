@@ -1,8 +1,8 @@
  class PagesController < ApplicationController
   def index
-    @events = Event.all
-    @products = Product.all
-    @services = Service.all
+    @events = Event.limit(4)
+    @products = Product.limit(3)
+    @services = Service.limit(3)
     @content = About.first
   end
 
@@ -15,9 +15,7 @@
   end
 
   def portfolio
-
-  	# action portfolio
-  	
+    @portfolios = Portfolio.all
   end
 
   def events
@@ -26,7 +24,7 @@
 
   def blog
   	# action blog 
-
+    @posts = Post.all
   end
 
   def contact

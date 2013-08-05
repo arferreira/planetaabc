@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801203435) do
+ActiveRecord::Schema.define(:version => 20130805132733) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -57,6 +57,12 @@ ActiveRecord::Schema.define(:version => 20130801203435) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "ckeditor_assets", :force => true do |t|
     t.string   "data_file_name",                  :null => false
     t.string   "data_content_type"
@@ -77,16 +83,46 @@ ActiveRecord::Schema.define(:version => 20130801203435) do
     t.string   "name"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string   "category"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "picture"
+    t.integer  "category_id"
   end
 
   create_table "messages", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "portfolios", :force => true do |t|
+    t.string   "title"
+    t.string   "picture"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
+  end
+
+  create_table "post_comments", :force => true do |t|
+    t.string   "user_name"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "email"
+    t.string   "site"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.integer  "category_id"
+    t.string   "excerpt"
+    t.text     "content"
+    t.string   "author"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "picture"
   end
 
   create_table "products", :force => true do |t|
@@ -95,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20130801203435) do
     t.string   "picture"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
   end
 
   create_table "services", :force => true do |t|

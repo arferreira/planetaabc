@@ -124,7 +124,7 @@
 												if ($(this).attr('src').indexOf('you')>0) {
 
 													var s = document.createElement("script");
-													s.src = "../www.youtube.com/player_api"; /* Load Player API*/
+													s.src = "http://www.youtube.com/player_api"; /* Load Player API*/
 													var before = document.getElementsByTagName("script")[0];
 													before.parentNode.insertBefore(s, before);
 												}

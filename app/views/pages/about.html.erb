@@ -3,6 +3,14 @@
 		<br><br>
 		<center><h1>A Empresa</h1></center>
     <article>
+      <strong>Missão:</strong><br>
+      <span><%= @content.mission.html_safe %></span><br>
+
+      <strong>Visão:</strong><br>
+      <span><%= @content.vision.html_safe %></span><br>
+
+      <strong>Valor:</strong><br>
+      <span><%= @content.value.html_safe %></span><br>
       <%= @content.content.html_safe %>
     </article>
 	</div> <!-- final div middle_inner-->

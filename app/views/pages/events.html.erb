@@ -1,0 +1,23 @@
+<section id="middle">
+  <div class="middle_inner">
+    <br><br>
+    <center><h1>Eventos</h1></center>
+    <section id="middle_content">
+      <div class="entry">
+        <% @events.each do |event| %>
+          <div class="one_third aligncenter">
+            <div class="featured_block">
+              <div style="padding: 0 31px;" class="">
+                <%= image_tag event.picture_url(:thumb), :class => "aligncenter"  %>
+              </div>
+              <h2><%= event.name %></h2>
+              <span class="entry-content">
+                <p><%= event.description%></p>
+              </span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div> <!-- final div middle_inner-->
+</section> <!-- final middle section -->
