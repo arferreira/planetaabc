@@ -4,180 +4,36 @@
             <section id="middle_content">
               <div class="entry">
                 <section class="portfolio_container four_blocks isotope" style="position: relative; overflow: hidden; height: 470px; ">
-                  <article class="portfolio format-album isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(0px, 0px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img1" class="p_img_container"><img src="images/img/fproject_4_1.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Lifestyle</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Design</a>, </li>
-                            <li><a href="#">Corporate</a></li><li>
-                          </li></ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120101133821</span>
-                        </header>
-                        <span class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-slider isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(244px, 0px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img2" class="p_img_container"><img src="images/img/fproject_4_3.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(250, 190, 9); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Half The World Away</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Design</a>, </li>
-                            <li><a href="#">Corporate</a></li>
-                          </ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120103134821</span>
-                        </header>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
+                  <% @portfolios.each do |portfolio| %>
+                    <article class="portfolio format-album isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(0px, 0px); ">
+                      <div class="portfolio_inner">
+                        <a href="album_four.html"></a>
+                        <figure class="preloader" style="background-image: none; ">
+                          <span class="image_container_img">
+                            <span id="img1" class="p_img_container">
+                              <%= image_tag post.picture_url(:thumb), :class => "fullwidth", :style=>"opacity: 1;"  %>
+                              <span class="image_rollover"></span>
+                            </span>
+                          </span>
+                        </figure>
+                        <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
+                          <header class="entry-header">
+                            <h6 class="entry-title">
+                              <%= link_to portfolio.title, portfolio %>
+                            </h6>
+                            <ul class="cmsms_category">
+                              <li><%= portfolio.category.name %></li>  
+                            </ul>
+                            <span class="cmsms_post_img"></span>
+                            <span class="meta-date" style="display:none;"><%= portfolio.created_at %></span>
+                          </header>
+                          <span class="entry-content">
+                            <p><%= portfolio.description %></p>
+                          </span>
                         </div>
                       </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-album isotope-item" data-category="business corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(488px, 0px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img3" class="p_img_container"><img src="images/img/fproject_4_2.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Going Nowhere</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Business</a>, </li>
-                            <li><a href="#">Corporate</a></li>
-                          </ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120107143821</span>
-                        </header>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet cons ectetuer adipiscing elit praesent vestibulu moles lacus aenean ummy hendrerit mahas. Praesent posuere tortor sed mi ullamcorper sodales. Cras porta purus in augue molestie aliquet. Aenean orci ipsum, ornare sit amet imper</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-video isotope-item" data-category="photography" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(732px, 0px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img4" class="p_img_container"><img src="images/img/fproject_4_4.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(249, 122, 20); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Underneath The Sky</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Photography</a></li>
-                          </ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120110143821</span>
-                        </header>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-video isotope-item" data-category="photography" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(0px, 235px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img5" class="p_img_container"><img src="images/img/fproject_4_4.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(249, 122, 20); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Underneath The Sky</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Photography</a></li>
-                          </ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120110143821</span>
-                        </header>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-album isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(244px, 235px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img6" class="p_img_container"><img src="images/img/fproject_4_1.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Lifestyle</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Design</a>, </li>
-                            <li><a href="#">Corporate</a></li><li>
-                          </li></ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120101133821</span>
-                        </header>
-                        <span class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
-                        </span>
-                      </div>
-                    </div>
-                  </article>
-                  <article class="portfolio format-slider isotope-item" data-category="design corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(488px, 235px); ">
-                    <div class="portfolio_inner">
-                      <a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img7" class="p_img_container"><img src="images/img/fproject_4_3.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(250, 190, 9); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Half The World Away</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Design</a>, </li>
-                            <li><a href="#">Corporate</a><a></a></li><a>
-                          </a></ul><a>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120103134821</span>
-                        </a></header><a>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis arcu vitae magna egestas pulvinar vitae</p>
-                        </div>
-                      </a></div><a>
-                    </a></div><a>
-                  </a></article><a>
-                  </a><article class="portfolio format-album isotope-item" data-category="business corporate" style="position: absolute; left: 0px; top: 0px; -webkit-transform: translate(732px, 235px); "><a>
-                    </a><div class="portfolio_inner"><a>
-                      </a><a href="album_four.html"></a>
-                      <figure class="preloader" style="background-image: none; "><span class="image_container_img"><span id="img8" class="p_img_container"><img src="images/img/fproject_4_2.jpg" alt="" class="fullwidth" style="opacity: 1; "><span class="image_rollover"></span></span></span>
-                        
-                      </figure>
-                      <div class="project_rollover" style="background-color: rgb(108, 196, 55); height: 25%; ">
-                        <header class="entry-header">
-                          <h6 class="entry-title"><a href="album_four.html">Going Nowhere</a></h6>
-                          <ul class="cmsms_category">
-                            <li><a href="#">Business</a>, </li>
-                            <li><a href="#">Corporate</a></li>
-                          </ul>
-                          <span class="cmsms_post_img"></span>
-                          <span class="meta-date" style="display:none;">20120107143821</span>
-                        </header>
-                        <div class="entry-content">
-                          <p>Lorem ipsum dolor sit amet cons ectetuer adipiscing elit praesent vestibulu moles lacus aenean ummy hendrerit mahas. Praesent posuere tortor sed mi ullamcorper sodales. Cras porta purus in augue molestie aliquet. Aenean orci ipsum, ornare sit amet imper</p>
-                        </div>
-                      </div>
-                    </div>
-                  </article>
+                    </article>
+                  <% end %>
                 </section>
               </div>
             </section>

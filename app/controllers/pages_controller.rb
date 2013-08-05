@@ -15,9 +15,7 @@
   end
 
   def portfolio
-
-  	# action portfolio
-  	
+    @portfolios = Portfolio.all
   end
 
   def events
