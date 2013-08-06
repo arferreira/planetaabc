@@ -4,6 +4,7 @@
     @products = Product.limit(3)
     @services = Service.limit(3)
     @content = About.first
+    @banners = Banner.all
   end
 
   def about
