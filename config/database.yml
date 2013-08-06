@@ -14,7 +14,7 @@ development:
   reconnect: false
   database: planetaabc_development
   username: root
-  password: rub32912289
+  password: 
   host: 127.0.0.1
   socket: /tmp/mysql.sock
 

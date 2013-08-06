@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @banner.name %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @banner.picture %>
+</p>
+
+<p>
+  <b>Icon1:</b>
+  <%= @banner.icon1 %>
+</p>
+
+<p>
+  <b>Icon2:</b>
+  <%= @banner.icon2 %>
+</p>
+
+<p>
+  <b>Icon3:</b>
+  <%= @banner.icon3 %>
+</p>
+
+
+<%= link_to 'Edit', edit_banner_path(@banner) %> |
+<%= link_to 'Back', banners_path %>

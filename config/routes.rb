@@ -1,4 +1,7 @@
 Planetaabc::Application.routes.draw do
+  resources :banners
+
+
   resources :post_comments
 
   resources :portfolios
