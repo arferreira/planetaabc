@@ -86,15 +86,14 @@
 		 									<ul>
 		 										<% @banners.each do |banner| %>
 			 										<li data-transition="random" data-slotamount="7" >
-			 											<img alt="" src="/images/revolution/bg-3.jpg" />
-			 											<% image_tag banner.picture_url(:banner_thumb) %>
-			 											<div class="tp-caption fade" data-easing="easeOutExpo" data-start="2000" data-speed="700" data-y="395" data-x="61">
-			 												<img alt="" src="/images/revolution/img-shadow2.png" />
-			 											</div>
-			 											<div data-linktoslide="4" data-easing="easeOutExpo" data-start="1500" data-speed="1000" data-y="427" data-x="85" class="caption lfb">
-			 												<img alt="" src="/images/revolution/img-shadow.png" />
-			 											</div>
-			 											<% if banner.youtube_url %>
+			 											<%= image_tag banner.picture_url(:banner_thumb) %>
+			 											<% unless banner.youtube_url.nil? || banner.youtube_url == "" %>
+				 											<div class="tp-caption fade" data-easing="easeOutExpo" data-start="2000" data-speed="700" data-y="395" data-x="61">
+				 												<img alt="" src="/images/revolution/img-shadow2.png" />
+				 											</div>
+				 											<div data-linktoslide="4" data-easing="easeOutExpo" data-start="1500" data-speed="1000" data-y="427" data-x="85" class="caption lfb">
+				 												<img alt="" src="/images/revolution/img-shadow.png" />
+				 											</div>
 				 											<div class="caption lft" data-easing="easeOutExpo" data-start="1300" data-speed="1000" data-y="50" data-x="71">
 				 												<img alt="" src="/images/revolution/img-10.png" />
 				 											</div>
