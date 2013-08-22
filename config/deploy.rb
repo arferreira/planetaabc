@@ -1,10 +1,10 @@
 require 'bundler/capistrano'
 
 set :default_environment, {
-  :PATH => '/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
-  :GEM_HOME => '/opt/local/ruby/gems'
+ # :PATH => '/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
+ # :GEM_HOME => '/opt/local/ruby/gems'
 }
-
+set :default_shell, '/bin/bash -l'
 set :application, '198.199.123.46'
 
 set :keep_releases, 3
@@ -53,11 +53,7 @@ before 'deploy:update_code' do
   deploy.check_folders
 end
 
-after 'deploy:update_code' do
-  solr.stop
-  solr.start
-  solr.reindex
-end
+
 
 
 namespace :deploy do
@@ -76,8 +72,8 @@ namespace :deploy do
   desc "Stop Application"
   task :stop, :roles => :app, :except => { :no_release => true } do 
     # mata o serviço do unicorn passando o pid definido na linha 99
-     #run "#{try_sudo} kill `cat #{unicorn_pid}`"
-     run "if [ -e /var/www/planetaabc/shared/pids/unicorn.pid ]; then kill `cat /var/www/cupom/shared/pids/unicorn.pid`; fi;"
+     run "#{try_sudo} kill `cat #{unicorn_pid}`"
+     #run "if [ -e /var/www/planetaabc/shared/pids/unicorn.pid ]; then kill `cat /var/www/planetaabc/shared/pids/unicorn.pid`; fi;"
   end
   
   # mata o serviço do unicorn apos axecuções atual
