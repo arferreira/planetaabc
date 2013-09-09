@@ -9,28 +9,33 @@
 
   def about
   	@content = About.first
+    @banners = Banner.all
   end
 
   def products
   	@products = Product.all
+    @banners = Banner.all
   end
 
   def portfolio
     @portfolios = Portfolio.all
+    @banners = Banner.all
   end
 
   def events
     @events = Event.all
+    @banners = Banner.all
   end
 
   def blog
   	# action blog 
     @posts = Post.all
+    @banners = Banner.all
   end
 
   def contact
   	# action contact
-
+    @banners = Banner.all
     @message = Message.new(params[:message])
     if @message.valid?
 

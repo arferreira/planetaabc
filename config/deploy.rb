@@ -5,7 +5,7 @@ set :default_environment, {
  :GEM_HOME => '/opt/local/ruby/gems'
 }
 
-set :application, '198.199.123.46'
+set :application, 'www.abcplaneta.com.br'
 
 set :keep_releases, 3
 
