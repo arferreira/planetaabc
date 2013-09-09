@@ -2,7 +2,7 @@ worker_processes 10
 
 working_directory "/var/www/planetaabc/current" # available in 0.94.0+
 
-listen 5000, :tcp_nopush => true
+listen 5002, :tcp_nopush => true
 
 timeout 30
 
