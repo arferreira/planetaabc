@@ -1,9 +1,5 @@
-require 'bundler/capistrano'
-
-set :default_environment, {
- :PATH => '/opt/local/bin:/opt/local/sbin:/opt/local/ruby/gems/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin',
- :GEM_HOME => '/opt/local/ruby/gems'
-}
+require "bundler/capistrano"
+require "rvm/capistrano"
 
 set :application, 'www.abcplaneta.com.br'
 
@@ -42,7 +38,7 @@ namespace :deploy do
       run "if [ -f '#{to}' ]; then rm '#{to}'; fi; ln -s #{from} #{to}"
     end
 
-    run "cd #{current} && RAILS_ENV=production && GEM_HOME=/opt/local/ruby/gems && bundle exec unicorn_rails -c #{deploy_to}/config/unicorn.rb -D"
+    run "cd #{current} && RAILS_ENV=production && bundle exec unicorn_rails -c #{deploy_to}/config/unicorn.rb -D"
 
   end
 
