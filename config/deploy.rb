@@ -7,6 +7,8 @@ set :keep_releases, 3
 
 set :scm, :git
 
+set :rvm_type, :system
+
 ssh_options[:forward_agent] = true
 
 default_run_options[:pty] = true
