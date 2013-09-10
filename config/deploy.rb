@@ -40,7 +40,7 @@ namespace :deploy do
       run "if [ -f '#{to}' ]; then rm '#{to}'; fi; ln -s #{from} #{to}"
     end
 
-    run "cd #{current} && RAILS_ENV=production && bundle exec unicorn_rails -c #{deploy_to}/config/unicorn.rb -D"
+    run "cd #{current} && RAILS_ENV=production && bundle exec unicorn_rails -c #{deploy_to}/config/unicorn.rb -E"
 
   end
 
