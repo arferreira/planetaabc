@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
 
-set :default_shell, "/bin/bash -l"
+
 
 set :application, 'www.abcplaneta.com.br'
 
@@ -58,12 +58,11 @@ namespace :deploy do
 desc "Start unicorn"
   task :start, :except => { :no_release => true } do
     run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
-    run "ps aux | grep unicorn_rails | head -n 1 | awk '{print $2}' > #{deploy_to}/shared/pids/unicorn.pid"
   end
 
   desc "Stop unicorn"
   task :stop, :except => { :no_release => true } do
-    run "kill -s QUIT `cat  #{deploy_to}/shared /pids/unicorn.pid`"
+    run "if [ -e /var/www/planetaabc/shared/pids/unicorn.pid ]; then kill `cat /var/www/planetaabc/shared/pids/unicorn.pid`; fi;"
   end
   
   # reinicia o serviço do unicorn
