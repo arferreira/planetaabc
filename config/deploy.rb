@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 require "rvm/capistrano"
-
+require 'capistrano-unicorn'
 
 
 set :application, 'www.abcplaneta.com.br'
@@ -51,27 +51,12 @@ before 'deploy:update_code' do
   deploy.check_folders
 end
 
+after 'deploy:restart', 'unicorn:reload'    # app IS NOT preloaded
+after 'deploy:restart', 'unicorn:restart'   # app preloaded
+after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero downtime deployments)
 
 namespace :deploy do
 
-  ## News methods ->
-desc "Start unicorn"
-  task :start, :except => { :no_release => true } do
-    run "cd #{current_path} ; bundle exec unicorn_rails -c config/unicorn.rb -D"
-  end
-
-  desc "Stop unicorn"
-  task :stop, :except => { :no_release => true } do
-    run "if [ -e /var/www/planetaabc/shared/pids/unicorn.pid ]; then kill `cat /var/www/planetaabc/shared/pids/unicorn.pid`; fi;"
-  end
-  
-  # reinicia o serviço do unicorn
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    # para o serviço
-    stop
-    # starta o serviço
-    start
-  end
 
   # verifica as pasta necessarias para o envio, e inicialização do s serviços
   # para corrigir bug que aconteceu comigo, talvez ja tenham corrigido esse erro
