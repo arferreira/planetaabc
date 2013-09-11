@@ -3,6 +3,7 @@ class ContactController < ApplicationController
   def new
     @menu = true
     @message = Message.new
+    @banners = Banner.all
   end
 
   def create
@@ -18,5 +19,6 @@ class ContactController < ApplicationController
       flash.now.alert = "Por favor preencha todos os campos"
       render :new
     end
+    @banners = Banner.all
   end
 end

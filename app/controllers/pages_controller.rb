@@ -35,7 +35,7 @@
 
   def contact
   	# action contact
-    @banners = Banner.all
+   
     @message = Message.new(params[:message])
     if @message.valid?
 
@@ -49,7 +49,7 @@
       render :new
     end
     
-
+     @banners = Banner.all
   end
 
 end

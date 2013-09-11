@@ -57,6 +57,15 @@ after 'deploy:restart', 'unicorn:duplicate' # before_fork hook implemented (zero
 
 namespace :deploy do
 
+desc "tail production log files" 
+task :tail_logs, :roles => :app do
+  trap("INT") { puts 'Interupted'; exit 0; }
+  run "tail -f /var/www/planetaabc/shared/production.log" do |channel, stream, data|
+    puts  # for an extra line break before the host name
+    puts "#{channel[:host]}: #{data}" 
+    break if stream == :err
+  end
+end
 
   # verifica as pasta necessarias para o envio, e inicialização do s serviços
   # para corrigir bug que aconteceu comigo, talvez ja tenham corrigido esse erro
