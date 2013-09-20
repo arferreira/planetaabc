@@ -1,16 +1,140 @@
-<nav>
-						<ul id="navigation">
-							<li class="current_page_item"><%= link_to content_tag("span", "Home"), {:controller => "pages", :action => "index"}%></li>
-							<li class="drop"><%= link_to content_tag("span", "Institucional"), {:controller => "pages", :action => "about"}%>
-							</li>
-							<li class="drop"><%= link_to content_tag("span", "Produtos"), {:controller => "pages", :action => "products"}%>
-							</li>
-							<li class="drop"><%= link_to content_tag("span", "Portifólio"), {:controller => "pages", :action => "portfolio"}%>
-							</li>
-							<li><%= link_to content_tag("span", "Eventos"), {:controller => "pages", :action => "events"}%></li>
-							<li><%= link_to content_tag("span", "Blog"), {:controller => "pages", :action => "blog"}%></li>
-							
-							<li><%= link_to content_tag("span", "Contato"), {:controller => "contact", :action => "new"}%></li>
-						</ul>
-						<div class="cl"></div>
-				  </nav>
+<header>
+        <div id="header-container" class="navbar-fixed-top">
+            <div class="container">
+                <div id="logo" class="animated fadeLeft">
+                    <h1>
+                        <%= link_to image_tag('/images/logo.png'), root_path %>
+                    </h1>
+                </div>
+
+                <nav id="header-navigation" class="animated fadeRight">
+                    <ul class="nav nav-pills">
+                        <li id="first-nav-pill" >
+                               <%= link_to raw("<div class='nav-icon'><i class='li_bubble'></i></div><div class='nav-text'>home</div>"), root_path %>
+                            
+                        </li>
+
+                        <li id="second-nav-pill">
+                               <%= link_to raw("<div class='nav-icon'><i class='li_settings'></i></div><div class='nav-text'>institucional</div>"), {:controller => "pages", :action => "about"} %>
+
+                        </li>
+
+                        <li id="third-nav-pill" class="dropdown">
+                               <%= link_to raw("<div class='nav-icon'><i class='li_study'></i></div><div class='nav-text'>produtos</div>"), {:controller => "pages", :action => "products"} %>
+                            
+                        </li>
+
+                        <li id="fourth-nav-pill">
+                               <%= link_to raw("<div class='nav-icon'><i class='li_photo'></i></div><div class='nav-text'>portifólio</div>"), {:controller => "pages", :action => "portfolio"} %>
+                        </li>
+
+                        <li id="fifth-nav-pill">
+                               <%= link_to raw("<div class='nav-icon'><i class='li_pen'></i></div><div class='nav-text'>blog</div>"), {:controller => "pages", :action => "blog"} %>
+                           
+                        </li>
+
+                        <li id="sixth-nav-pill">
+                            
+                            <%= link_to raw("<div class='nav-icon'><i class='li_paperplane'></i></div><div class='nav-text'>contato</div>"), {:controller => "pages", :action => "contact"} %>
+                        </li>
+                    </ul>
+                </nav>
+
+                <nav id="phone-header-navigation">
+                    <div class="phone-menu-container">
+                        <div class="phone-menu-toggle clearfix">
+                            <div class="phone-menu-left-side">
+                                menu
+                            </div>
+
+                            <div class="phone-menu-right-side">
+                                <i class="icon-align-justify"></i>
+                            </div>
+                        </div>
+
+                        <ul class="phone-menu-fields unstyled" role="menu">
+                            <li role="menuitem"><a href="index.html">Home-Corporate</a></li>
+
+                            <li role="menuitem"><a href="home-creative.html">Home-Creative</a></li>
+
+                            <li role="menuitem"><a href="home-basic.html">Home-Basic</a></li>
+
+                            <li role="menuitem"><a href="page-elements.html">Create Your Own</a></li>
+
+                            <li class="nav-row"><a href="page-elements.html">Elements</a></li>
+
+                            <li role="menuitem"><a href="accordions-toggles.html">Accordions & Toggles</a></li>
+
+                            <li role="menuitem"><a href="message-boxes.html">Message Boxes</a></li>
+
+                            <li role="menuitem"><a href="skills-bar.html">Skills Bar</a></li>
+
+                            <li role="menuitem"><a href="buttons-social.html">Buttons & Social Icons</a></li>
+
+                            <li role="menuitem"><a href="sliders.html">Sliders</a></li>
+
+                            <li role="menuitem"><a href="content-boxes.html">Content Boxes</a></li>
+
+                            <li role="menuitem"><a href="font-awesome.html">Font Awesome Icons</a></li>
+
+                            <li role="menuitem"><a href="full-width-section.html">Full Width Section</a></li>
+
+                            <li role="menuitem"><a href="google-maps.html">Google Maps</a></li>
+
+                            <li role="menuitem"><a href="media.html">Media</a></li>
+
+                            <li role="menuitem"><a href="persons.html">Persons</a></li>
+
+                            <li role="menuitem"><a href="page-pricing-tables.html">Pricing Tables</a></li>
+
+                            <li role="menuitem"><a href="latest-work.html">Latest Work</a></li>
+
+                            <li role="menuitem"><a href="latest-posts.html">Latest Posts</a></li>
+
+                            <li role="menuitem"><a href="gallery.html">Gallery</a></li>
+
+                            <li role="menuitem"><a href="tabs.html">Tabs</a></li>
+
+                            <li role="menuitem"><a href="font-awesome.html">Lists</a></li>
+
+                            <li role="menuitem"><a href="columns.html">Columns</a></li>
+
+                            <li role="menuitem"><a href="page-typography.html">Typography</a></li>
+
+                            <li class="nav-row"><a href="page-pricing-tables.html">Pricing Tables</a></li>
+
+                            <li class="nav-row"><a href="page-services.html">Services</a></li>
+
+                            <li class="nav-row"><a href="page-team.html">Team</a></li>
+
+                            <li class="nav-row"><a href="page-typography.html">Typography</a></li>
+
+                            <li class="nav-row"><a href="page-sidebar.html">Sidebar</a></li>
+
+                            <li class="nav-row"><a href="page-full-width.html">FullWidth</a></li>
+
+                            <li class="nav-row"><a href="page-404.html">404</a></li>
+
+                            <li class="nav-row"><a href="portfolio-2columns.html">2 Columns Portfolio</a></li>
+
+                            <li class="nav-row"><a href="portfolio-4columns.html">4 Columns Portfolio</a></li>
+
+                            <li class="nav-row"><a href="portfolio-masonry.html">Sortable Portfolio</a></li>
+
+                            <li class="nav-row"><a href="portfolio-single.html">Single Portfolio</a></li>
+
+                            <li class="nav-row"><a href="blog-standard.html">Standard Blog</a></li>
+
+                            <li class="nav-row"><a href="blog-grid.html">Grid Blog</a></li>
+
+                            <li class="nav-row"><a href="blog-grid-sidebar.html">Grid Blog With Sidebar</a></li>
+
+                            <li class="nav-row"><a href="blog-single.html">Single Blog</a></li>
+
+                            <li class="nav-row"><a href="page-contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>

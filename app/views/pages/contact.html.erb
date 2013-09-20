@@ -1,31 +1,87 @@
-<section id="middle">
-	<div class="middle_inner">
-		<br><br>
-		<center><h1>Contato</h1></center>
-		<center><p>Envie-nos um email ou venha visitar-nos e conhecer um poucos mais de nossos produtos!</p></center>
-		<div class="mapa_partner">
-			<iframe width="945" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt&amp;geocode=&amp;q=iFollow+Ag%C3%AAncia+-+Rua+Alencarliense+Alves,+Campo+Grande+-+Mato+Grosso+do+Sul&amp;aq=0&amp;oq=ifollow&amp;sll=-20.875572,-54.261694&amp;sspn=1.426812,2.565308&amp;ie=UTF8&amp;hq=iFollow+Ag%C3%AAncia+-&amp;hnear=R.+Alencarliense+Alves+-+Maria+Aparecida,+Campo+Grande+-+Mato+Grosso+do+Sul,+79044-350&amp;t=m&amp;ll=-20.467533,-54.552753&amp;spn=0.009295,0.009295&amp;output=embed"></iframe>
-		</div> <!-- Final div mapa_partner -->
-		<div style="width:400px; height:350px; border:1px solid red; margin-bottom:25px;">
 
-			<section>
-       <fieldset class="fields">
-        <%= form_for @message, :html => {:class => "contactform", :id => "contact-form"}, :url => contact_path do |form| %>
 
-        <%= form.text_field :name, :placeholder => "Nome" %>
+	<br><br>
+    <div class="google-map">
+        <div id="map-canvas"><iframe width="1920" height="704" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.br/maps?f=q&amp;source=s_q&amp;hl=pt&amp;geocode=&amp;q=iFollow+Ag%C3%AAncia+-+Rua+Alencarliense+Alves,+Campo+Grande+-+Mato+Grosso+do+Sul&amp;aq=0&amp;oq=ifollow&amp;sll=-20.875572,-54.261694&amp;sspn=1.426812,2.565308&amp;ie=UTF8&amp;hq=iFollow+Ag%C3%AAncia+-&amp;hnear=R.+Alencarliense+Alves+-+Maria+Aparecida,+Campo+Grande+-+Mato+Grosso+do+Sul,+79044-350&amp;t=m&amp;ll=-20.467533,-54.552753&amp;spn=0.009295,0.009295&amp;output=embed"></iframe></div>
+    </div>
 
-        <%= form.text_field :email, :placeholder => "E-Mail" %>
+    <div class="page-element gray-element fadeDown">
+        <div class="container">
+            <h4>Entre em contato conosco</h4>
+            <p>
+            	Encontre nossa localização ou envie-nos um email agora mesmo, seja para realizar um orçamento, sugestão ou crítica. A equipe Planeta ABC agradece o seu contato.
+            </p>
 
-        <%= form.text_field :subject, :placeholder => "Assunto" %>
+     
+        </div>
+    </div>
 
-        <%= form.text_area :body, :placeholder => "Messagem" %>
+    <div class="page-element fadeDown">
+        <div class="container">
+            <div class="row">
+                <div id="contact-info" class="span3">
+                    <div>
+                        <div>
+                            <div class="contact-icon">
+                                <i class="icon-home"></i>
+                            </div>
 
-        <% end %>
-      </fieldset>
-      <%= link_to_submit_id "#contact-form", content_tag(:span, "Enviar"), :class => "std-button bt-bigsize" %>
-    </section>
+                            <div class="contact-text">
+                                <p>30 Rua etcetra e tal, Carandá Bosque - Campo Grande MS</p>
+                            </div>
+                        </div>
 
-		</div>
+                        <div>
+                            <div class="contact-icon">
+                                <i class="icon-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <p>(67) 30225555</p>
+                            </div>
+                        </div>
 
-	</div> <!-- final div middle_inner-->
-</section> <!-- final middle section -->
+                        <div>
+                            <div class="contact-icon">
+                                <i class="icon-envelope"></i>
+                            </div>
+
+                            <div class="contact-text">
+                                <p>contato@abcplaneta.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact-form" class="span9">
+                    <div class="row">
+                        <form method="post" target="#" />
+                            <div class="span3">
+                                <label for="name">Seu nome*</label>
+                                <input type="text" name="name" id="name" class="stylish-text-input span3" value="" />
+
+                                <label for="email">Seu email*</label>
+                                <input type="text" name="email" id="email" class="stylish-text-input span3" value="" />
+
+                                <label for="website">Seu website*</label>
+                                <input type="text" name="website" id="website" class="stylish-text-input span3" value="" />
+                            </div>
+
+                            <div class="span6">
+                                <label for="comment-input">Sua Mensagem*</label>
+                                <textarea name="comment" id="comment-input" class="stylish-textarea contact-textarea span6" maxlength="5000"></textarea>
+
+                                <div class="row">
+                                    <div class="span6">
+                                        <div class="stylish-button">
+                                            <input type="submit" name="submit" value="Enviar Mensagem" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

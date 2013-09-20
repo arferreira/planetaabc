@@ -1,3 +1,7 @@
+
+
+ <div class="post-reply">
+   <div class="post-reply-form">
 <%= form_for(@comment,:html => {:id =>"commentform"}) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -11,24 +15,44 @@
     </div>
   <% end %>
   <h2>Deixar um comentario</h2>
+  <div class="row">
   <p>
-    <%= f.label :user_name %><span class="color2">*</span>
-    <%= f.text_field :user_name %>
+    <div class="span3">
+      <label for="name">Seu nome*</label>
+    <%= f.text_field :user_name, :class => "stylish-text-input span3" %>
+  </div>
   </p>
   <p>
-    <%= f.label :email %><span class="color2">*</span>
-    <%= f.text_field :email %>
+    <div class="span3">
+      <label for="email">Seu e-mail*</label>
+    <%= f.text_field :email, :class => "stylish-text-input span3" %>
+  </div>
   </p>
   <p>
-    <%= f.label :site %><span class="color2">*</span>
-    <%= f.text_field :site %>
+    <div class="span3">
+     <label for="website">Seu website</label>
+    <%= f.text_field :site, :class => "stylish-text-input span3" %>
+  
+</div>
   </p>
   <p>
-    <%= f.text_area :body %>
+     <div class="row">
+       <div class="span9">
+         <label for="comment-input">Seu comentário*</label>
+    <%= f.text_area :body, :class => "stylish-textarea span9" %>
+  </div>
+  </div>
   </p>
-  <p>
+   <div class="row">
+   <div class="span9">
+   <div class="stylish-button">
      <%= f.submit "Adicionar Comentário", :class => "button" %>
-  </p>
+  </div>
+  </div>
+  </div>
   <div class="cl"></div>
    <%= f.hidden_field :post_id %>
 <% end %>
+</div>
+</div>
+</div>

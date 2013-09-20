@@ -1,59 +1,79 @@
-<section id="middle">
-  <div class="middle_inner">
-    <br><br>
-    <center><h1>Blog</h1></center>
-    <div class="entry_summary">
-      <section class="blog">
-        <% @posts.each do |post| %>
-          <article class="post hentry format-standard">
-            <div class="cmsms_info">
-              <div class="published">
-                <span class="cmsms_date_day"><%= post.created_at.strftime("%d") %></span>
-                <span class="cmsms_date_year_mounth"><%= post.created_at.strftime("%Y") %> <br><span class="mounth"><%= post.created_at.strftime("%b").upcase %></span></span>
-              </div>
-              <div class="cmsms_post_img" style="background-color:#fabe09;"></div>
-              <div class="cmsms_like"><a href="#" class="cmsmsLike"><span>0</span></a></div>
-            </div>  
-            <div class="ovh">
-              <header class="entry-header">
-                <div class="cmsms_media">
-                  <figure>
-                    <a href="openpost.html" class="preloader inBlog" style="background-image: none; height: auto; padding: 0px; ">
-                    <span class="image_container_img">
-                    <span id="img1" class="p_img_container">
-                    <%= image_tag post.picture_url(:mega_thumb), :class => "fullwidth", :style=>"opacity: 1;"  %>
-                    <span class="image_rollover"></span>
-                    </span>
-                    </span>
-                      
-                    </a>
-                  </figure>
-                </div>
-                <div class="cmsms_title">
-                  <h1 class="entry-title"><a href="openpost.html"><%= post.title %></a></h1>
-                </div>
-                <div class="cmsms_post_info">
-                  <span class="user_name">By <%= post.author %></span>&nbsp;&nbsp;/&nbsp;&nbsp;
-                  <span>Em <a href="#">Corporate</a>, <a href="#">Business</a>&nbsp;&nbsp;/&nbsp;&nbsp;</span>
-                  <span>(<%= post.post_comments.all.size %>) <a href="#" class="cmsms_comments">Comentários</a></span>
-                </div>
-              </header>
-              <div class="cl"></div>
-              <div class="entry-content">
-                <p><%= post.excerpt %></p>
-              </div>
-              <%= link_to 'Leia mais..', post, :class => "post_link cmsms_more" %>
-              <div class="divider"></div>
-              <footer class="entry-meta">
-                <ul class="cmsms_tags">
-                  <li>Tags: <a href="openpost.html">Business</a>, </li>
-                  <li><a href="openpost.html">Corporate</a></li>
-                </ul>
-              </footer>
+
+    <div id="top-image" class="top-image1">
+        <div class="container">
+            <div id="top-image-caption">
+                <h2>Blog</h2>
             </div>
-          </article>
-        <% end %>
-      </section>
+        </div>
     </div>
-  </div> <!-- final div middle_inner-->
-</section> <!-- final middle section -->
+
+
+
+    <div class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="isotope posts">
+                  <% @posts.each do |post| %>
+                    <div class="isotope-item post span6">
+                        <div class="row">
+                            <div class="span3">
+                                <div class="thumbnail post-media">
+                                     <%= image_tag post.picture_url(:mega_thumb) %>
+
+                                    <div class="thumbnail-hover">
+                                        <a href="images/pop-up.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="span3">
+                                <div class="post-content">
+                                    <div class="post-title">
+                                        <h3><i class="icon-camera post-title-icon"></i><%= post.title %></h3>
+                                    </div>
+
+                                    <div class="post-info clearfix">
+                                        <div class="post-date">
+                                            <i class="icon-calendar"></i>
+                                            <p><%= post.created_at.strftime("%d de %m de %Y") %></p>
+                                        </div>
+
+                                        <div class="post-category">
+                                            <i class="icon-pencil"></i>
+                                            <a href="#"><%= post.author %></a>
+                                        </div>
+
+                                        <div class="post-comments">
+                                            <i class="icon-comments"></i>
+                                            <a href="#">(<%= post.post_comments.all.size %>)</a>
+                                        </div>
+                                    </div>
+
+                                    <div style="clear: both"></div>
+
+                                    <div class="post-excerpt">
+                                        <p>
+                                            <%= truncate(post.excerpt) %>
+                                        </p>
+                                    </div>
+
+                                    <div class="stylish-button">
+                                        <%= link_to 'Leia mais..', post, :class => "post_link cmsms_more" %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+
+                </div>
+            </div>
+
+            <div class="load-more">
+                <div class="stylish-button">
+                    <a href="javascript:;" class="load-more-button"><i class="icon-rotate-right"></i>Carregar mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

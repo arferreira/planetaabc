@@ -1,21 +1,62 @@
-<section id="middle">
-	<div class="middle_inner">
-		<br><br>
-		<center><h1>Nossos Produtos</h1></center>
-    <section id="middle_content">
-      <div class="entry">
-        <% @products.each do |product| %>
-          <div class="one_third aligncenter">
-            <div class="featured_block">
-              <div class="cmsms_services_icon">
-                <%= image_tag product.picture_url(:mini_thumb), :class => "aligncenter"  %>
-              </div>
-              <h2><%= product.name %></h2>
-              <p><%= product.description %></p>
+ <div id="top-image" class="top-image1">
+        <div class="container">
+            <div id="top-image-caption">
+                <h2>Nossos Produtos</h2>
             </div>
-          </div>
-        <% end %>
-      </div>
-    </section>
-	</div> <!-- final div middle_inner-->
-</section> <!-- final middle section -->
+        </div>
+    </div>
+
+    <div id="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="span4">
+                    <div class="isotope-filter-wrapper">
+                        <div class="dropdown isotope-filter">
+                            <div class="stylish-button">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="icon-th"></i>
+                                    Categorias
+                                </a>
+                            </div>
+
+                            <ul class="unstyled portfolio-filter dropdown-menu" role="menu">
+                                <li class="filter" role="menuitem" data-filter="*">Todos</li>
+                                <li class="filter" role="menuitem" data-filter=".educ">Educação</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="portfolio isotope row">
+              <% @products.each do |product| %>
+                <div class="portfolio-image isotope-item span6 cats">
+                    <div class="thumbnail">
+                       <%= image_tag product.picture_url(:banner_thumb) %>
+                    </div>
+
+                    <div class="portfolio-hover">
+                        <a href="#">
+                            <div class="portfolio-hover-text">
+                                <h3><%= product.name %></h3>
+                                <p><i class="icon-folder-open"></i><%= product.description %></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <% end %>
+
+            </div>
+
+            <div class="load-more">
+                <div class="stylish-button">
+                    <a href="javascript:;" class="load-more-button"><i class="icon-rotate-right"></i>Carregar mais</a>
+                </div>
+            </div>
+        </div>
+    </div>
+

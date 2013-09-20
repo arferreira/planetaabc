@@ -1,0 +1,59 @@
+
+    <footer>
+        <div id="inner-footer">
+            <div class="container">
+                <div class="row">
+                    <div id="footer-left-side" class="span8">
+                        <div id="footer-menu">
+                            <ul class="nav nav-pills">
+                                <li><%= link_to "Home", root_path %></li>
+                                <li><%= link_to "Institucional", {:controller => "pages", :action => "about"} %></li>
+                                <li><%= link_to "Produtos", {:controller => "pages", :action => "products"} %></li>
+                                <li><%= link_to "Portifólio", {:controller => "pages", :action => "portfolio"} %></li>
+                                <li><%= link_to "Blog", {:controller => "pages", :action => "blog"} %></li>
+                                <li><%= link_to "Contato", {:controller => "pages", :action => "contact"}, :class => "last" %></li>
+                            </ul>
+                        </div>
+
+                        <div id="footer-container-info">
+                            <div class="row">
+                                <div class="span2">
+                                    <i class="icon-home"></i> <p>Rua dom aquino 1042</p>
+                                </div>
+                                <div class="span2">
+                                    <i class="icon-phone"></i><p>(67) 30275047</p>
+                                </div>
+                                <div class="span2">
+                                    <i class="icon-envelope"></i><p>contato@abcplaneta.com.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="footer-right-side" class="span3">
+                        <div id="stay-connected">
+                            <p>Planeta ABC nas redes sociais</p>
+                        </div>
+
+                        <div id="footer-social-icons" class="clearfix">
+                            <a href="#" class="facebook-icon social-icon"><i class="icon-facebook"></i></a>
+                            <a href="#" class="twitter-icon social-icon"><i class="icon-twitter"></i></a>
+                            <a href="#" class="dribble-icon social-icon"><i class="icon-dribbble"></i></a>
+                            <a href="#" class="pinterest-icon social-icon"><i class="icon-pinterest"></i></a>
+                            <a href="#" class="googleplus-icon social-icon"><i class="icon-google-plus"></i></a>
+                            <a href="#" class="tumblr-icon social-icon"><i class="icon-tumblr"></i></a>
+                            <a href="#" class="instagram-icon social-icon"><i class="icon-instagram"></i></a>
+                            <a href="#" class="rss-icon social-icon"><i class="icon-rss"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="copyright-container" class="container">
+            <div class="container">
+                <p>&copy;Copyright 2013 Planeta ABC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>

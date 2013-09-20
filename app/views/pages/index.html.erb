@@ -1,118 +1,312 @@
-<section id="middle">
-	<div class="middle_inner">
-		<section id="middle_content">
-			<div class="entry">
-				<% @products.each do |product| %>
-          <div class="one_third aligncenter">
-            <div class="featured_block">
-              <div class="cmsms_services_icon">
-                <%= image_tag product.picture_url(:mini_thumb), :class => "aligncenter"  %>
-              </div>
-              <h2><%= product.name %></h2>
-              <p><%= product.description %></p>
-            </div>
-          </div>
-        <% end %>
-				<div class="cl"></div>
-				<div class="one_first">
-					<aside class="widget widget_text">
-						<div class="textwidget">
-							<section class="post_type_shortcode four_blocks">
-								<h3 class="cms_title">Últimos Eventos</h3>
-								<script type="text/javascript">
-									jQuery(document).ready(function () { 
-										jQuery('.post_type_list').cmsmsResponsiveContentSlider( { 
-											sliderWidth : '100%', 
-											sliderHeight : 'auto', 
-											animationSpeed : 500, 
-											animationEffect : 'slide', 
-											animationEasing : 'easeInOutExpo', 
-											pauseTime : 0, 
-											activeSlide : 1, 
-											touchControls : false, 
-											pauseOnHover : false, 
-											arrowNavigation : true, 
-											slidesNavigation : false 
-										} );
-									} );
-								</script>
-								<ul class="post_type_list responsiveContentSlider">
-									<li>
-										<% @events.each do |event| %>
-											<article class="portfolio format-album">
-												<div class="portfolio_inner">
-													<%= link_to '', event %>
-													<figure>
-														<%= image_tag event.picture_url(:thumb), :class => "fullwidth"  %>
-													</figure>
-													<div class="project_rollover" style="background-color:#6cc437;">
-														<header class="entry-header">
-															<h6 class="entry-title">
-																<%= link_to event.name, event %>
-															</h6>
-															<ul class="cmsms_category">
-																<li><%= link_to event.category.name, '#' %></li>
-															</ul>
-															<span class="cmsms_post_img"></span>
-														</header>
-														<span class="entry-content">
-															<p><%= truncate event.description, length: 100 %></p>
-														</span>
-													</div>
-												</div>
-											</article>
-										<% end %>
-									</li>
-								</ul>
-							</section>
-						</div>
-					</aside>
-				</div>
-				<div class="cl"></div>
-				<div class="two_third">
-					<div class="tour_content">
-					<h2>Nossos Serviços</h2><br />
-						<ul class="tour">
-							<% @services.each do |service| %>
-								<li class="current">
-									<%= link_to service.name, service %>
-								</li>
-							<% end %>
-						</ul>
-						<% @services.each do |service| %>
-							<div class="tour_box">
-								<div class="tour_box_inner">
-									<h5><%= service.name %></h5>
-									<p><%= service.description %></p>
-								</div>
-							</div>	
-						<% end %>
-					</div>
-				</div>
-				<div class="one_third last">
-					<div class="cmsms_shortcode_testimonials">
-						<h2>Missão / Visão</h2><br />
-						<header class="entry-header">
-							<blockquote>
-								<h6></h6>
-							</blockquote>
-						</header>
+ <%= render 'shared/slider' %>
+ <div class="page-element">
+        <div class="container">
+            <div class="service-boxes-wrapper clearfix">
+                <div class="service-box-container fadeDown">
+                    <div class="service-box service-box-1 clearfix">
+                        <div class="service-box-front">
+                            <i class="icon-umbrella"></i>
 
-					</div>
-				</div>
-				<div class="cl"></div>
-				
-				<div class="colored_shortcode">
-					<div class="colored_title">
-						<div class="colored_title_inner">
-							<h2>Conheça nossos produtos!</h2>
-							<p>Envie-nos um contato agora mesmo.</p>
-						</div>
-					</div>
-					<a class="colored_button" href="#"><span class="icon_banner icon_down"></span>Orçamento online</a>
-					
-				</div>
-			</div>
-		</section>
-	</div>
-</section>
+                            <div class="service-title">
+                                <p>seo optimizing</p>
+                            </div>
+
+                            <div class="service-content">
+                                <p>Cras auctor vel dui sed rhoncus.<br /> Sed urna ut purus vulputate ultricies.<br /> Quisque congue volutpat lorem</p>
+                            </div>
+                        </div>
+
+                        <div class="service-box-back">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-box-container fadeDown">
+                    <div class="service-box service-box-2">
+                        <div class="service-box-front">
+                            <i class="icon-trophy"></i>
+
+                            <div class="service-title">
+                                <p>software support</p>
+                            </div>
+
+                            <div class="service-content">
+                                <p>Cras auctor vel dui sed rhoncus.<br /> Sed urna ut purus vulputate ultricies.<br /> Quisque congue volutpat lorem</p>
+                            </div>
+                        </div>
+
+                        <div class="service-box-back">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-box-container fadeDown">
+                    <div class="service-box service-box-3">
+                        <div class="service-box-front">
+                            <i class="icon-globe"></i>
+
+                            <div class="service-title">
+                                <p>concept design</p>
+                            </div>
+
+                            <div class="service-content">
+                                <p>Cras auctor vel dui sed rhoncus.<br /> Sed urna ut purus vulputate ultricies.<br /> Quisque congue volutpat lorem</p>
+                            </div>
+                        </div>
+
+                        <div class="service-box-back">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-box-container fadeDown">
+                    <div class="service-box service-box-4">
+                        <div class="service-box-front">
+                            <i class="icon-android"></i>
+
+                            <div class="service-title">
+                                <p>user management</p>
+                            </div>
+
+                            <div class="service-content">
+                                <p>Cras auctor vel dui sed rhoncus.<br /> Sed urna ut purus vulputate ultricies.<br /> Quisque congue volutpat lorem</p>
+                            </div>
+                        </div>
+
+                        <div class="service-box-back">
+                            <a href="#"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-element gray-element custom-list">
+        <div class="container fadeDown">
+            <div class="row">
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-beaker"></i><p>Educação</p></li>
+                    </ul>
+
+                    <p>
+                        A educação é um tema desafiador no Brasil. Apesar de sermos a 7º potência no
+mundo, ainda possuimos baixos índices de alfabetização. Esse é um dos problemas que
+enfrentamos e que precisa ser solucionado, dentre outras ações com uma iniciativa principal.
+                    </p>
+                </div>
+
+
+
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-tablet"></i><p>Inovação</p></li>
+                    </ul>
+
+                    <p>
+A inovação. E esse é o lema da editora e distribuidora Planeta ABC, uma jovem
+empresa que já está em mais de 30 cidades do estado de Mato Grosso do Sul atuando na área
+educacional.
+                    </p>
+                </div>
+
+
+
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-trophy"></i><p>Conceito</p></li>
+                    </ul>
+
+                    <p>
+Em parceria com o Sefe, que é um Sistema de Ensino que atua há 18 anos com foco
+na educação infantil e fundamental, distribuimos materiais de ensino em escolas públicas e
+privadas, de todas as etapas da educação básica.
+                    </p>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-calendar-empty"></i><p>Metodologia</p></li>
+                    </ul>
+
+                    <p>
+Com o intuito de fornecer educação de qualidade e voltada ao um pensamento de
+futuro às crianças e jovens, independentemente de sua localidade ou grau de ensino,
+representamos uma nova estratégia de repensar a educação e adequá-la à nova realidade, em
+que as crianças passam a maior parte de seu dia conectadas à internet. Um exemplo disso é o
+projeto “Cidade Educação”, que é uma ferramenta criada para auxiliar o professor em sua
+prática pedagógica, de forma lúdica e em várias mídias, como CD ́s e internet.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-heart-empty"></i><p>Diferencial</p></li>
+                    </ul>
+
+E falando em conteúdos diferenciados, também oferecemos materiais de ensino
+complementares que estimulam uma formação mais completa do aluno, como o ensino de
+inglês, educação ambiental, educação financeira, direitos humanos e cidadania, trânsito,
+música e historia e geografia regionais.
+                    </p>
+                </div>
+
+                <div class="span4">
+                    <ul class="list unstyled">
+                        <li><i class="icon-gift"></i><p>Atuação</p></li>
+                    </ul>
+
+                    <p>
+Atuamos também, dentro da concepção de propor ações educacionais visando uma
+parceria sólida entre família e escola. Afinal, vários fatores influenciam no aproveitamento do
+aluno e se essas duas instituições buscarem ações coordenadas, os problemas do cotidiano
+escolar são enfrentados e resolvidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-element">
+        <div class="container">
+            <div class="title-center">
+                <h3>Assessoria pedagógica</h3>
+
+                <p>
+                    Nossa equipe também desenvolveu uma estrutura de assessoria pedagógica que
+consiste em várias ações, as quais se iniciam no contato com a equipe da Secretaria de
+Educação, quando se faz uma análise da proposta educacional do município em relação ao
+que é desenvolvido pelo Sistema, seguido de cursos, palestras, visitas técnicas, entre outros.
+                </p>
+            </div>
+
+            <div class="element-image-center fadeDown">
+               <center><img src="images/banner_bottom.jpg" alt="browser-image" /></center> 
+            </div>
+        </div>
+    </div>
+
+    <div class="page-element gray-element">
+        <div class="container">
+            <div class="title-center">
+                <h3>OUR AWESOME BRANDS</h3>
+
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae mi sem. In id justo eu lectus pharetra convallis.
+                    <br />
+                    In hac habitasse platea dictumst. Etiam est ipsum, tincidunt at risus eu, pharetra viverra diam.
+                </p>
+            </div>
+
+            <div class="brands-wrapper">
+                <div class="row  fadeDown">
+                    <div class="span3">
+                        <h4>Lorem Ipsum Dolor</h4>
+                        <br />
+                        <p>Roin facilisis varius nunc. Curabitur eros risus, ultrices et dui ut, luctus accumsan nibh. Fusce convallis sapien placerat tellus suscipit vehicula. Cras vitae diam ut justo elementum faucibus eget a diam. Etiam sodales a sem vitae fermentum. Lorem ipsum dolor sit amet.</p><a href="#">View All >> </a>
+                    </div>
+                    <div class="span3">
+                        <div class="thumbnail brand-image">
+                            <img src="images/brand03.png" alt="brand-image" />
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="thumbnail brand-image">
+                            <img src="images/brand01.png" alt="brand-image" />
+                        </div>
+                    </div>
+                    <div class="span3">
+                        <div class="thumbnail brand-image">
+                            <img src="images/brand02.png" alt="brand-image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-element" style="">
+        <div class="container">
+            <div class="latest-posts fadeDown">
+                <h4>Últimas postagens de nosso blog</h4>
+                <div class="posts" style="">
+                     <!-- Aqui é o feed do blog -->
+                        <% @feed_posts_blog.each do |post| %>
+                    <div class="row" style="display:inline-block;">
+
+                       
+                        <div class="span6">
+                            <div class="post">
+                                <div class="row">
+                                    <div class="span3 latest-post-media">
+                                        <div class="thumbnail post-media">
+                                            
+                                            <%= image_tag(post.picture_url(:thumb)) %>
+                                          
+
+                                            <div class="thumbnail-hover">
+                                                <a href="images/pop-up.png"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="span3 latest-post-content">
+                                        <div class="post-content">
+                                            <div class="post-title">
+                                                <h3><i class="icon-camera post-title-icon"></i><%= post.title %></h3>
+                                            </div>
+
+                                            <div class="post-info clearfix">
+                                                <div class="post-date">
+                                                    <i class="icon-calendar"></i>
+                                                    <p>Nov 10, 2012</p>
+                                                </div>
+
+                                                <div class="post-category">
+                                                    <i class="icon-pencil"></i>
+                                                    <a href="#"><%= post.author %></a>
+                                                </div>
+
+                                                <div class="post-comments">
+                                                    <i class="icon-comments"></i>
+                                                    <a href="#">
+                                                        <% 
+                                                        id_post = post.id 
+                                                        counter = PostComment.count_by_sql("select count(*) from post_comments where post_id = #{id_post}")
+                                                        %>
+                                                        <%= counter %>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div style="clear: both"></div>
+
+                                            <div class="post-excerpt">
+                                                <p>
+                                                   <%= truncate(post.excerpt) %>
+                                                </p>
+                                            </div>
+
+                                            <div class="stylish-button">
+                                               <%= link_to 'Leia mais..', post, :class => "post_link cmsms_more" %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- Aqui termina o feed do blog -->
+                        
+                    </div>
+                    <% end %> <!-- final do laço de repetição -->
+                </div>
+            </div>
+        </div>
+    </div>
