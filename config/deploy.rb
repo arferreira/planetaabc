@@ -44,6 +44,7 @@ set :unicorn_config,  "#{current}/config/unicorn.rb"
 # <optinal>
 set :unicorn_pid,     "#{deploy_to}/shared/pids/unicorn.pid"
 
+default_environment["RAILS_ENV"] = 'production'
 
 # executar antes do 'deploy:update_code' o comando 'deploy.check_folders'
 # do capistrano
